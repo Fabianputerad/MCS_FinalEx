@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Project_UAS_MCS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="msg_token_fmt">Token value %s </string>
+    <string name="channel1">CH1</string>
+</resources>
