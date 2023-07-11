@@ -34,10 +34,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         db = Database.getInstance(this);
-
+        Log.d("Debug", "work");
         String notificationTitle = remoteMessage.getNotification().getTitle();
         String notificationMessage = remoteMessage.getNotification().getBody();
         db.insertNotif(notificationTitle, notificationMessage);
+
+
 
         if (remoteMessage.getNotification() != null) {
             System.out.println("Message Notification Body: " + remoteMessage.getNotification().getBody());

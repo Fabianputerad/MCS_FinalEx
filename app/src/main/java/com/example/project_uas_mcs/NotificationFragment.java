@@ -36,6 +36,7 @@ public class NotificationFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycleNotif);
         adapterNotif = new AdapterNotif(this.getActivity(), title, msg);
         recyclerView.setAdapter(adapterNotif);
+        adapterNotif.notifyDataSetChanged();
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         displaydata();
         return view;
