@@ -2,7 +2,6 @@ package com.example.project_uas_mcs.Database;
 
 import android.content.Context;
 
-import com.example.project_uas_mcs.Data;
 import com.example.project_uas_mcs.Model.Notif;
 
 import java.util.Vector;

@@ -1,6 +1,5 @@
 package com.example.project_uas_mcs;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,17 +18,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.project_uas_mcs.Adapter.Adapter;
+import com.example.project_uas_mcs.Model.Data;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,6 +64,7 @@ public class HomeFragment extends Fragment {
                         data.setTitle(dataObject.getString("title").toString());
                         data.setBody(dataObject.getString("body").toString());
                         data.setUserId(dataObject.getString("userId").toString());
+                        data.setId(dataObject.getString("id").toString());
                         datas.add(data);
 
                     } catch (JSONException e) {

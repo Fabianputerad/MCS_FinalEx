@@ -1,4 +1,4 @@
-package com.example.project_uas_mcs;
+package com.example.project_uas_mcs.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.project_uas_mcs.Model.Data;
+import com.example.project_uas_mcs.R;
 
 import java.util.List;
 

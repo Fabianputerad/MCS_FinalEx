@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.project_uas_mcs.Database.DatabaseHelper;
+import com.example.project_uas_mcs.Adapter.AdapterNotif;
 import com.example.project_uas_mcs.Database.NotifHelper;
 
 import java.util.ArrayList;
@@ -36,9 +36,10 @@ public class NotificationFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycleNotif);
         adapterNotif = new AdapterNotif(this.getActivity(), title, msg);
         recyclerView.setAdapter(adapterNotif);
-        adapterNotif.notifyDataSetChanged();
+        //adapterNotif.notifyDataSetChanged();
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         displaydata();
+
         return view;
     }
     private void displaydata() {
@@ -53,5 +54,6 @@ public class NotificationFragment extends Fragment {
                 msg.add(cursor.getString(2));
             }
         }
+
     }
 }

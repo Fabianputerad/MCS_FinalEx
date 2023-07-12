@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
+import com.example.project_uas_mcs.Adapter.AdapterNotif;
 import com.example.project_uas_mcs.Database.Database;
 import com.example.project_uas_mcs.Database.DatabaseHelper;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,18 +28,23 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
+
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private Database db;
-
+    ArrayList<String> title, msg;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+        title = new ArrayList<>();
+        msg = new ArrayList<>();
         db = Database.getInstance(this);
         Log.d("Debug", "work");
         String notificationTitle = remoteMessage.getNotification().getTitle();
         String notificationMessage = remoteMessage.getNotification().getBody();
         db.insertNotif(notificationTitle, notificationMessage);
-
+        AdapterNotif adapterNotif = new AdapterNotif(this, title, msg);
+        adapterNotif.update();
 
 
         if (remoteMessage.getNotification() != null) {
@@ -88,6 +94,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
+
+
 }
 
 

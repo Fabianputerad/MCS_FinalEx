@@ -1,4 +1,4 @@
-package com.example.project_uas_mcs;
+package com.example.project_uas_mcs.Model;
 
 public class Data {
     private String UserId;
